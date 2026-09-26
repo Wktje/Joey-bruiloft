@@ -1,0 +1,10 @@
+#introPlane{position:absolute;width:1920px;height:1080px;left:0;top:0;transform-origin:top left;pointer-events:none;color:#eeede9;z-index:25}
+#introPlane[hidden],#phoneOff[hidden]{display:none}
+.intro-copy{position:absolute;left:135px;top:250px;width:930px;font-family:"Courier New",Courier,monospace}
+.intro-eyebrow{font-size:18px;letter-spacing:5px;color:#a7aaa9;margin-bottom:27px}
+.intro-rule{width:72px;height:3px;background:#9eaaac;margin-bottom:46px}
+.intro-row{margin-bottom:35px;min-height:105px}
+.intro-label{font-size:17px;letter-spacing:4px;color:#8b9295;margin-bottom:10px}
+.intro-value{font-size:57px;line-height:1.15;font-weight:400;letter-spacing:-1.5px;overflow-wrap:anywhere;white-space:pre-wrap}
+.intro-cursor{font-size:46px;margin-left:5px;color:#aaa}
+#phoneOff{position:absolute;inset:0;z-index:30;background:linear-gradient(125deg,#101113,#030405 28%,#020203 80%,#090a0d);pointer-events:none}

@@ -1,0 +1,78 @@
+{
+  "date": "Zaterdag · 1 Juli",
+  "time": "12:07",
+  "location": "Slaapkamer",
+  "concept": true,
+  "scenes": [
+    [
+      {
+        "sender": "Maaike me liefste",
+        "text": "Joel… ben je al wakker?"
+      },
+      {
+        "sender": "Geert",
+        "text": "Weet je nog iets van gisteren?"
+      },
+      {
+        "sender": "Geert",
+        "text": "Foto"
+      }
+    ],
+    [
+      {
+        "sender": "Naam afzender",
+        "text": "Hier komt het eerste appje van scène 2."
+      },
+      {
+        "sender": "",
+        "text": ""
+      },
+      {
+        "sender": "",
+        "text": ""
+      }
+    ],
+    [
+      {
+        "sender": "Naam afzender",
+        "text": "Hier komt het eerste appje van scène 3."
+      },
+      {
+        "sender": "",
+        "text": ""
+      },
+      {
+        "sender": "",
+        "text": ""
+      }
+    ],
+    [
+      {
+        "sender": "Naam afzender",
+        "text": "Hier komt het eerste appje van scène 4."
+      },
+      {
+        "sender": "",
+        "text": ""
+      },
+      {
+        "sender": "",
+        "text": ""
+      }
+    ],
+    [
+      {
+        "sender": "Naam afzender",
+        "text": "Hier komt het eerste appje van scène 5."
+      },
+      {
+        "sender": "",
+        "text": ""
+      },
+      {
+        "sender": "",
+        "text": ""
+      }
+    ]
+  ]
+}

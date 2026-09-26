@@ -1,0 +1,27 @@
+from pathlib import Path
+p=Path('outputs/Joel-telefoonformat.html')
+s=p.read_text()
+def change(old,new):
+ global s
+ assert old in s,old[:140]
+ s=s.replace(old,new)
+change('</style>',Path('work/intro-style.css').read_text()+'\n</style>')
+change("window.renderAt=function(t){", "window.renderSceneAt=function(t){")
+change("$('device').style.left=(v.clientWidth-1200*scale)/2+'px'", "$('device').style.left=((v.clientWidth-1200*scale)/2+introMix*v.clientWidth*.26)+'px'")
+change("$('device').style.top=(v.clientHeight-2475*scale)/2+'px'}", "$('device').style.top=(v.clientHeight-2475*scale)/2+'px';const plane=$('introPlane');if(plane){const s=Math.min(v.clientWidth/1920,v.clientHeight/1080);plane.style.transform='scale('+s+')';plane.style.left=(v.clientWidth-1920*s)/2+'px';plane.style.top=(v.clientHeight-1080*s)/2+'px'}}")
+change("function tick(now){const t=Math.min(DEMO.duration,(now-start)/1000);renderAt(t);playReplySounds(t);", "function tick(now){const absolute=Math.min(DEMO.duration+INTRO.duration,(now-start)/1000);if(introOnly&&absolute>=INTRO.duration){stop();introOnly=false;shown=0;show(0);$('state').textContent='Scène-intro afgelopen · telefoon aan. Gebruik Volgend appje.';return}const t=absolute-INTRO.duration;renderAt(absolute);playIntroSounds(absolute);if(t>=0)playReplySounds(t);")
+change("function show(count,animation=false){hidePhoto();", "function show(count,animation=false){clearIntro();hidePhoto();")
+change("$('demo').onclick=()=>{stop();audio();playing=true;", "$('demo').onclick=()=>{stop();audio();introOnly=false;lastIntroSound=-1;playing=true;")
+change("$('date').textContent=config.date;$('time').textContent=config.time;$('location').textContent=config.location", "$('date').textContent=sceneMeta().date;$('time').textContent=sceneMeta().time;$('location').textContent=sceneMeta().location")
+change("const [h,m]=config.time.split(':')", "const [h,m]=sceneMeta().time.split(':')")
+change("$('dateInput').value=config.date;$('timeInput').value=config.time;$('locInput').value=config.location", "$('dateInput').value=sceneMeta().date;$('timeInput').value=sceneMeta().time;$('locInput').value=sceneMeta().location")
+change("config[key]=$(id).value||initial[key];reset()", "config.sceneIntros??=Array.from({length:5},()=>({}));config.sceneIntros[scene]??={};config.sceneIntros[scene][key]=$(id).value||initial[key];reset()")
+change("  return result;", "  result.sceneIntros=Array.from({length:5},(_,i)=>{const m=result.sceneIntros?.[i]||{};if(m.date!==undefined&&(typeof m.date!=='string'||m.date.length>45)||m.location!==undefined&&(typeof m.location!=='string'||m.location.length>35)||m.time!==undefined&&!/^([01]\\d|2[0-3]):[0-5]\\d$/.test(m.time))throw Error('Ongeldige scène-intro');return m});\n  return result;")
+change("$('demo').textContent='Speel video · 1:45';", Path('work/intro-code.js').read_text()+"\n$('demo').textContent='Speel video · 1:57';")
+change('Concept 09 · Joel typt terug', 'Concept 10 · documentaire-intro en chat')
+change("Joel-film-met-typende-chat.mp4", "Joel-film-met-documentaire-intro.mp4")
+change('Download video met Joels berichten (MP4)', 'Download video met scène-intro (MP4)')
+change('1 minuut en 45 seconden', '1 minuut en 57 seconden')
+change('Vanaf 1:09 klapt het toetsenbord uit en typt Joel drie berichten. Alles speelt automatisch, inclusief snoozen en de fotochat.', 'Eerst worden datum, tijd en plaats naast de uitgeschakelde telefoon getypt. Daarna begint de scène. Vanaf 1:21 typt Joel terug. Alles speelt automatisch.')
+change('<h2>Vul het format in</h2>', '<h2>Vul het format in</h2><p class="small">Datum, begintijd en locatie gelden voor de geselecteerde scène. Kies hieronder een scène en vul de introgegevens in.</p>')
+p.write_text(s)

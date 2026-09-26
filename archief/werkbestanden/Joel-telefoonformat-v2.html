@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="nl">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joel — telefoonformat</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#111b19;color:#ebf4ee;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;border:1px solid #425951;border-radius:9px;background:#263c34;color:#fff;padding:11px 15px}button:hover{background:#385b4b}button.primary{background:#bdeccb;color:#12271c;border:0;font-weight:650}header{padding:22px 30px;border-bottom:1px solid #30423b;display:flex;align-items:center;justify-content:space-between;gap:20px}header strong{font-size:23px}header small{display:block;color:#a9beb2;margin-top:5px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;padding:24px}#viewport{width:100%;aspect-ratio:16/9;background:#000;overflow:hidden;position:relative;border-radius:12px}#stage{position:absolute;width:1920px;height:1080px;transform-origin:top left;overflow:hidden;background:radial-gradient(ellipse at 83% 8%,#c7dbb7 0,transparent 43%),radial-gradient(ellipse at 13% 35%,#7ba792 0,transparent 48%),linear-gradient(137deg,#1a4c44,#457e65 55%,#b1c6a3);color:#fff}#stage:before{content:"";position:absolute;width:2600px;height:960px;left:-400px;top:620px;border-radius:50%;transform:rotate(-24deg);background:linear-gradient(155deg,#285b50,#123b35);box-shadow:0 -25px 100px #abc8a04a}#stage:after{content:"";position:absolute;width:2500px;height:800px;left:320px;top:960px;border-radius:50%;transform:rotate(-27deg);background:linear-gradient(120deg,#79a185,#2e6454)}.ui{position:absolute;inset:0;z-index:2}.island{position:absolute;top:28px;left:860px;width:200px;height:48px;border-radius:40px;background:#0a1312}.camera{position:absolute;right:20px;top:16px;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle,#29466a,#121c26 65%)}.status{position:absolute;top:43px;left:110px;right:110px;display:flex;justify-content:space-between;font-size:27px;font-weight:600;opacity:.93}.statusright{display:flex;align-items:center;gap:18px}.bars{display:flex;align-items:end;gap:4px;height:21px}.bars i{display:block;width:6px;background:white;border-radius:2px}.battery{width:46px;height:24px;border:2px solid #ffffffa0;border-radius:6px;padding:3px;position:relative}.battery:before{content:"";display:block;width:78%;height:100%;border-radius:2px;background:#fff}.battery:after{content:"";position:absolute;right:-6px;top:6px;width:3px;height:8px;background:#ffffffa0;border-radius:2px}.clockarea{position:absolute;top:120px;left:0;right:0;text-align:center;text-shadow:0 2px 24px #103b2320}.date{font-size:40px;font-weight:500;letter-spacing:.3px}.time{font-size:190px;font-weight:650;letter-spacing:-9px;line-height:1.13;font-variant-numeric:tabular-nums}.location{font-size:24px;letter-spacing:2px;margin-top:8px;color:#e5f0d6}.notifications{position:absolute;left:360px;top:475px;width:1200px;display:flex;flex-direction:column;gap:17px}.notice{position:relative;border-radius:30px;padding:22px 30px 24px;background:#f4f7f0ed;box-shadow:0 10px 40px #03291e25;color:#17362b;min-height:139px;overflow:hidden}.meta{display:flex;align-items:center;gap:11px;font-size:20px;color:#426350;line-height:1;margin-bottom:12px}.meta .age{margin-left:auto;font-size:19px;color:#58715f}.wa{width:25px;height:25px;background:#29ac68;border-radius:7px;display:flex;align-items:center;justify-content:center;color:white}.wa svg{width:20px;height:20px}.sender{font-size:29px;font-weight:700;line-height:1.18;margin-bottom:5px}.message{font-size:34px;font-weight:450;line-height:1.2;overflow-wrap:anywhere;white-space:pre-wrap}.alarm{position:absolute;left:610px;top:530px;width:700px;text-align:center;padding:30px 45px;background:#123a30df;border:1px solid #ffffff2f;border-radius:35px;box-shadow:0 20px 80px #032a2630}.alarm .label{font-size:27px;color:#e2eccc}.alarm .title{font-size:52px;margin:14px 0 26px;font-weight:550}.snooze{display:inline-block;background:#e9b862;border-radius:40px;color:#3a2912;padding:15px 55px;font-size:29px;font-weight:650}.homebar{position:absolute;bottom:27px;left:830px;width:260px;height:8px;background:#ffffffc7;border-radius:10px}.concept{position:absolute;bottom:58px;left:0;right:0;text-align:center;letter-spacing:2px;font-size:17px;color:#e0eddfaa}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.help{color:#a9beb2;line-height:1.55;font-size:14px}.panel{background:#1b2a25;border:1px solid #344a40;border-radius:12px;padding:20px}.panel h2{font-size:18px;margin:0 0 18px}.panel label{display:block;font-size:13px;color:#bbcebf;margin:15px 0 7px}.panel input,.panel textarea,.panel select{width:100%;border:1px solid #4b6053;border-radius:7px;padding:9px;background:#14211c;color:#fff}.panel textarea{resize:vertical;min-height:65px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.save{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.small{font-size:12px;color:#a9beb2;line-height:1.5}.error{color:#ffbdad}#viewport:fullscreen{width:100vw;height:100vh;border-radius:0;aspect-ratio:auto}.render header,.render .panel,.render .toolbar,.render .help{display:none}.render .layout{display:block;padding:0}.render #viewport{width:100vw;height:100vh;border-radius:0}.render #stage{transform:none!important;left:0!important;top:0!important}@media(max-width:950px){.layout{grid-template-columns:1fr}.panel{max-width:650px}header{align-items:start;flex-direction:column}}
+
+button:disabled{opacity:.4;cursor:default}
+.photo-screen{position:absolute;inset:0;z-index:5;background:#09110e;display:flex;align-items:center;justify-content:center}
+.photo-screen[hidden]{display:none}.photo-screen img{display:block;width:100%;height:100%;object-fit:contain}
+.photo-section{margin-top:24px;padding-top:21px;border-top:1px solid #344a40}.photo-section h3{margin:0 0 10px;font-size:17px}.photo-section>button{width:100%;margin-top:8px}
+.photo-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}.photo-row{padding:9px;background:#14211c;border:1px solid #344a40;border-radius:9px;display:grid;grid-template-columns:65px minmax(0,1fr);gap:10px;align-items:center}
+.photo-thumb{width:65px;height:62px;padding:0;overflow:hidden;background:#08120d}.photo-thumb img{display:block;width:100%;height:100%;object-fit:cover}.photo-name{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:7px}.photo-actions{display:flex;gap:5px}.photo-actions button{padding:4px 7px;font-size:12px}.photo-empty{color:#a9beb2;font-size:13px;line-height:1.5}.photo-section .small{margin:8px 0}
+</style>
+<header><div><strong>Joel · de ochtend erna</strong><small>Bewerkbaar telefoonformat voor de live sketch</small></div><span class="small">Concept 02 · 16:9 · werkt zonder internet</span></header>
+<main class="layout"><section><div id="viewport"><div id="stage"><div class="ui">
+<div class="status"><span>Joel</span><div class="statusright"><div class="bars"><i style="height:7px"></i><i style="height:12px"></i><i style="height:17px"></i><i style="height:22px"></i></div><span>5G</span><div class="battery"></div></div></div><div class="island"><div class="camera"></div></div>
+<div class="clockarea"><div id="date" class="date"></div><div id="time" class="time"></div><div id="location" class="location"></div></div>
+<div class="alarm" id="alarm" hidden><div class="label">Wekker</div><div class="title">Tijd om op te staan.</div><div class="snooze">Sluimer</div></div>
+<div id="notifications" class="notifications"></div><div class="concept" id="concept">CONCEPT · VOORBEELDTEKSTEN</div><div class="homebar"></div>
+</div><div id="photoScreen" class="photo-screen" hidden><img id="photoDisplay" alt="Foto bij de herinnering"></div></div></div>
+<div class="toolbar"><button class="primary" id="next">Volgend appje →</button><button id="back">← Terug</button><button id="photosButton" disabled>Toon foto’s</button><button id="phoneButton" hidden>Terug naar telefoon</button><button id="reset">Leeg scherm</button><button id="demo">Demo · 24 sec.</button><button id="full">Projecteren ⛶</button></div>
+<p class="help"><b>Live:</b> spatie / → = volgend appje of foto · ← = terug · F = foto’s · T = telefoon · R = leeg scherm · 1–5 = scène kiezen · Esc = stop demo / verlaat volledig scherm.<br>Na de appjes verschijnen de foto’s, één per druk op de spatiebalk. Na de laatste foto keer je terug naar de telefoon. Alles wacht op de bediener. De demo toont alleen de appjes; filmpjes voeg je later toe in de montage. De demo bevat een korte zelfgemaakte wekker en meldingstonen.</p>
+<p class="small" id="state" role="status"></p>
+</section><aside class="panel"><h2>Vul het format in</h2>
+<label for="dateInput">Datumtekst</label><input id="dateInput" maxlength="45">
+<div class="row"><div><label for="timeInput">Begintijd</label><input id="timeInput" type="time"></div><div><label for="locInput">Locatie</label><input id="locInput" maxlength="35"></div></div>
+<label for="sceneInput">Scène</label><select id="sceneInput"><option value="0">1 · Eerste herinnering</option><option value="1">2 · Tweede herinnering</option><option value="2">3 · Derde herinnering</option><option value="3">4 · Vierde herinnering</option><option value="4">5 · Vijfde herinnering</option></select>
+<div id="messageFields"></div>
+<section class="photo-section"><h3>Foto’s bij deze scène</h3><p class="small">Liggend of staand: de hele foto blijft zichtbaar. Kies meerdere foto’s tegelijk en zet ze hieronder in volgorde.</p><button id="addPhotos">＋ Foto’s toevoegen</button><input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden><p class="small">JPG, PNG of WebP · maximaal 20 foto’s per scène. Exporteer HEIC-foto’s eerst als JPG.</p><div id="photoList" class="photo-list"></div><p id="photoStatus" class="small" role="status"></p></section>
+<label><input type="checkbox" id="conceptInput" style="width:auto"> Toon ‘concept · voorbeeldteksten’</label>
+<label><input type="checkbox" id="soundInput" checked style="width:auto"> Meldingstonen</label>
+<div class="save"><button id="save">Bewaar project</button><button id="load">Laad project</button><input id="fileInput" type="file" accept="application/json,.json" hidden></div>
+<p class="small">‘Bewaar project’ bewaart de teksten én foto’s van alle vijf scènes in één bestand. Bewaar vóór het sluiten: wijzigingen worden niet automatisch opgeslagen. Eerdere tekstbestanden kun je ook laden. De meegeleverde MP4 verandert niet automatisch mee.</p><p class="small error" id="error" role="alert"></p>
+</aside></main>
+<script>
+const $=id=>document.getElementById(id);
+const initial={date:'Zaterdag · datum volgt',time:'12:07',location:'Slaapkamer',concept:true,scenes:[[{sender:'Tom',text:'Joel… ben je al wakker?'},{sender:'Tom',text:'Weet je nog iets van gisteren?'},{sender:'Tom',text:'Ik heb de beelden nog. 😂'}],...Array.from({length:4},(_,i)=>[{sender:'Naam afzender',text:'Hier komt het eerste appje van scène '+(i+2)+'.'},{sender:'',text:''},{sender:'',text:''}])]};
+initial.photos=Array.from({length:5},()=>[]);
+let photoIndex=-1, photoLoad=0, importingPhotos=false;
+let config=structuredClone(initial), scene=0, shown=0, playing=false,start=0,raf=0,lastEvent=-1,audioCtx;
+const icon='<span class="wa"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M20 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5Z"/><path d="M8 7c0 5 3 8 8 8l1-2-3-1-1 1c-2-1-3-2-3-4l1-1-2-2Z"/></svg></span>';
+function fit(){const v=$('viewport');const scale=Math.min(v.clientWidth/1920,v.clientHeight/1080);$('stage').style.transform='scale('+scale+')';$('stage').style.left=(v.clientWidth-1920*scale)/2+'px';$('stage').style.top=(v.clientHeight-1080*scale)/2+'px'}
+new ResizeObserver(fit).observe($('viewport'));
+function messages(){return config.scenes[scene].filter(m=>m.text.trim())}
+function base(){ $('date').textContent=config.date;$('time').textContent=config.time;$('location').textContent=config.location;$('concept').hidden=!config.concept; }
+function card(m,progress=1){const el=document.createElement('div');el.className='notice';el.innerHTML='<div class="meta">'+icon+'<span>WHATSAPP</span><span class="age">nu</span></div><div class="sender"></div><div class="message"></div>';el.querySelector('.sender').textContent=m.sender||'Onbekend';el.querySelector('.message').textContent=m.text;const p=1-Math.pow(1-Math.min(1,Math.max(0,progress)),3);el.style.opacity=p;el.style.transform='translateY('+(-28*(1-p))+'px) scale('+(0.97+.03*p)+')';return el}
+function fitCards(){const n=$('notifications');n.style.transformOrigin='top center';n.style.transform='scale('+Math.min(1,525/n.scrollHeight)+')'}
+function show(count,animation=false){hidePhoto();base();$('alarm').hidden=true;$('notifications').replaceChildren(...messages().slice(0,count).map(m=>card(m)));fitCards();if(animation&&count){$('notifications').lastElementChild?.animate([{opacity:0,transform:'translateY(-28px) scale(.97)'},{opacity:1,transform:'translateY(0) scale(1)'}],{duration:350,easing:'ease-out'});} $('state').textContent='Scène '+(scene+1)+' · '+count+' van '+messages().length+' appjes zichtbaar';updateControls();}
+function audio(){if(!$('soundInput').checked)return null;audioCtx??=new(window.AudioContext||window.webkitAudioContext)();audioCtx.resume();return audioCtx}
+function tone(type){const c=audio();if(!c)return;const notes=type==='alarm'?[[880,0,.12],[880,.2,.12],[1108,.4,.15]]:[[880,0,.11],[1320,.12,.18]];for(const [f,d,l]of notes){const o=c.createOscillator(),g=c.createGain(),t=c.currentTime+d;o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.12,t+.008);g.gain.exponentialRampToValueAtTime(.001,t+l);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+l+.02)}}
+function stop(){playing=false;cancelAnimationFrame(raf)}
+function next(){stop();if(photoIndex>=0){if(photoIndex+1<photos().length)showPhoto(photoIndex+1);else phone();return}if(shown<messages().length){shown++;show(shown,true);tone('notice')}else if(photos().length)showPhoto(0)}
+function previous(){stop();if(photoIndex>0)showPhoto(photoIndex-1);else if(photoIndex===0)phone();else{shown=Math.max(0,shown-1);show(shown)}}
+function reset(){stop();shown=0;show(0)}
+function clockAfter(minutes){const [h,m]=config.time.split(':').map(Number);let v=(h*60+m+minutes)%1440;return String(Math.floor(v/60)).padStart(2,'0')+':'+String(v%60).padStart(2,'0')}
+window.renderAt=function(t){hidePhoto();base();$('time').textContent=clockAfter(t<2.5?0:t<5?9:18);$('alarm').hidden=t>=6;const starts=[7,12,17];$('notifications').replaceChildren(...messages().filter((m,i)=>t>=starts[i]).map((m,i)=>card(m,(t-starts[i])/.38)));fitCards();};
+function tick(now){const t=(now-start)/1000;renderAt(t);const events=[0,2.5,5,7,12,17];for(let i=lastEvent+1;i<events.length;i++){if(t>=events[i]){if(i<3||messages()[i-3])tone(i<3?'alarm':'notice');lastEvent=i;}}if(t<24&&playing)raf=requestAnimationFrame(tick);else{playing=false;shown=messages().length;$('state').textContent='Demo afgelopen. Klik op Toon foto’s voor de beelden bij deze scène.';updateControls()}}
+function bind(){base();$('dateInput').value=config.date;$('timeInput').value=config.time;$('locInput').value=config.location;$('conceptInput').checked=config.concept;$('sceneInput').value=scene;$('messageFields').replaceChildren();config.scenes[scene].forEach((m,i)=>{const label=document.createElement('label');label.textContent='Appje '+(i+1)+' · afzender';const name=document.createElement('input');name.maxLength=35;name.value=m.sender;name.setAttribute('aria-label','Afzender appje '+(i+1));const txt=document.createElement('textarea');txt.maxLength=110;txt.value=m.text;txt.setAttribute('aria-label','Tekst appje '+(i+1));name.oninput=()=>{m.sender=name.value;reset()};txt.oninput=()=>{m.text=txt.value;reset()};$('messageFields').append(label,name,txt);});renderPhotos();reset()}
+for(const [id,key]of [['dateInput','date'],['timeInput','time'],['locInput','location']])$(id).oninput=()=>{config[key]=$(id).value||initial[key];reset()};
+$('conceptInput').onchange=()=>{config.concept=$('conceptInput').checked;base()};$('sceneInput').onchange=()=>{scene=Number($('sceneInput').value);bind()};
+$('next').onclick=next;$('back').onclick=previous;$('reset').onclick=reset;$('demo').onclick=()=>{stop();audio();playing=true;start=performance.now();lastEvent=-1;raf=requestAnimationFrame(tick)};
+$('full').onclick=async()=>{try{await $('viewport').requestFullscreen();document.activeElement.blur()}catch{$('error').textContent='Volledig scherm is hier niet beschikbaar. Open dit HTML-bestand in Chrome of Edge.'}};
+document.addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)||(document.activeElement.tagName==='BUTTON'&&document.activeElement.closest('.panel')))return;if(e.code==='Space'||e.key==='ArrowRight'){e.preventDefault();next()}else if(e.key==='ArrowLeft'){$('back').click()}else if(e.key.toLowerCase()==='f'){if(photos().length)showPhoto(0)}else if(e.key.toLowerCase()==='t')phone();else if(e.key.toLowerCase()==='r')reset();else if(/^[1-5]$/.test(e.key)){scene=Number(e.key)-1;bind()}else if(e.key==='Escape'){stop();if(document.fullscreenElement)document.exitFullscreen().catch(()=>{})}});
+$('save').onclick=()=>{if(importingPhotos)return;const url=URL.createObjectURL(new Blob([JSON.stringify(config,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='Joel-project.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+$('load').onclick=()=>$('fileInput').click();$('fileInput').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const c=JSON.parse(await file.text());if(typeof c.date!=='string'||typeof c.location!=='string'||!/^([01]\d|2[0-3]):[0-5]\d$/.test(c.time)||!Array.isArray(c.scenes)||c.scenes.length!==5||c.scenes.some(s=>!Array.isArray(s)||s.length!==3||s.some(m=>typeof m.sender!=='string'||m.sender.length>35||typeof m.text!=='string'||m.text.length>110))||c.date.length>45||c.location.length>35)throw Error();config=normalizeConfig(c);scene=0;bind();$('error').textContent='';}catch{$('error').textContent='Dit bestand heeft niet het juiste formaat. Kies een eerder bewaard Joel-project.json of Joel-teksten.json bestand.'}e.target.value=''};
+
+function normalizeConfig(c){
+  const result=structuredClone(c);
+  if(result.photos===undefined)result.photos=Array.from({length:5},()=>[]);
+  if(!Array.isArray(result.photos)||result.photos.length!==5||result.photos.some(list=>!Array.isArray(list)||list.length>20||list.some(p=>!p||typeof p.name!=='string'||typeof p.src!=='string'||!/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/]+=*$/.test(p.src))))throw Error('Ongeldige foto’s');
+  return result;
+}
+function photos(){return config.photos[scene]}
+function hidePhoto(){photoLoad++;photoIndex=-1;$('photoScreen').hidden=true;$('photoDisplay').removeAttribute('src');}
+function updateControls(){
+  const viewing=photoIndex>=0;
+  $('photosButton').disabled=!photos().length;
+  $('phoneButton').hidden=!viewing;
+  $('next').disabled=!viewing&&shown>=messages().length&&!photos().length;
+  $('next').textContent=viewing?(photoIndex+1<photos().length?'Volgende foto →':'Terug naar telefoon →'):(shown<messages().length?'Volgend appje →':photos().length?'Toon foto’s →':'Alle appjes getoond');
+}
+async function showPhoto(index){
+  if(!photos()[index])return;
+  stop();const token=++photoLoad;const photo=photos()[index];
+  const img=new Image();img.src=photo.src;
+  try{await img.decode()}catch{if(token===photoLoad)$('error').textContent='Deze foto kan niet worden getoond. Voeg hem opnieuw toe als JPG of PNG.';return}
+  if(token!==photoLoad)return;
+  photoIndex=index;$('photoDisplay').src=photo.src;$('photoDisplay').alt=photo.name;$('photoScreen').hidden=false;
+  $('state').textContent='Scène '+(scene+1)+' · foto '+(index+1)+' van '+photos().length+' · '+photo.name;
+  updateControls();
+}
+function phone(){stop();show(shown)}
+function renderPhotos(){
+  const list=$('photoList');list.replaceChildren();
+  if(!photos().length){const empty=document.createElement('div');empty.className='photo-empty';empty.textContent='Nog geen foto’s. Voeg de beelden voor deze herinnering toe.';list.append(empty)}
+  photos().forEach((p,i)=>{
+    const row=document.createElement('div');row.className='photo-row';
+    const thumb=document.createElement('button');thumb.className='photo-thumb';thumb.title='Toon foto '+(i+1);thumb.setAttribute('aria-label',thumb.title);
+    const img=document.createElement('img');img.src=p.src;img.alt=p.name;thumb.append(img);thumb.onclick=()=>showPhoto(i);
+    const info=document.createElement('div');info.style.minWidth='0';const name=document.createElement('div');name.className='photo-name';name.textContent=(i+1)+'. '+p.name;name.title=p.name;
+    const actions=document.createElement('div');actions.className='photo-actions';
+    function action(label,title,disabled,fn){const b=document.createElement('button');b.textContent=label;b.title=title;b.setAttribute('aria-label',title);b.disabled=disabled;b.onclick=()=>{phone();fn();renderPhotos();updateControls()};actions.append(b)}
+    action('↑','Foto '+(i+1)+' naar voren',i===0,()=>{[photos()[i-1],photos()[i]]=[photos()[i],photos()[i-1]]});
+    action('↓','Foto '+(i+1)+' naar achteren',i===photos().length-1,()=>{[photos()[i+1],photos()[i]]=[photos()[i],photos()[i+1]]});
+    action('Verwijder','Verwijder foto '+(i+1),false,()=>photos().splice(i,1));
+    info.append(name,actions);row.append(thumb,info);list.append(row);
+  });updateControls();
+}
+async function readPhoto(file){
+  if(!/\.(jpe?g|png|webp)$/i.test(file.name)&&!/^image\/(jpeg|png|webp)$/.test(file.type))throw Error(file.name+': gebruik JPG, PNG of WebP.');
+  if(file.size>30*1024*1024)throw Error(file.name+': dit bestand is groter dan 30 MB.');
+  const url=URL.createObjectURL(file);const img=new Image();
+  try{
+    img.src=url;await img.decode();const scale=Math.min(1,2560/Math.max(img.naturalWidth,img.naturalHeight));
+    const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));
+    const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    return{name:file.name,src:canvas.toDataURL('image/jpeg',.91)};
+  }catch{throw Error(file.name+': kon niet worden geopend. Exporteer de foto als JPG of PNG.')}finally{URL.revokeObjectURL(url)}
+}
+$('addPhotos').onclick=()=>$('photoInput').click();
+$('photoInput').onchange=async e=>{
+  const files=Array.from(e.target.files);e.target.value='';if(!files.length)return;
+  const targetScene=scene,target=photos();const room=20-target.length;const chosen=files.slice(0,room);const errors=[];let added=0;
+  if(files.length>room)errors.push('Maximaal 20 foto’s per scène; de overige bestanden zijn overgeslagen.');
+  importingPhotos=true;$('addPhotos').disabled=true;$('save').disabled=true;$('load').disabled=true;$('error').textContent='';
+  try{for(const [i,file]of chosen.entries()){$('photoStatus').textContent='Foto '+(i+1)+' van '+chosen.length+' verwerken voor scène '+(targetScene+1)+'…';try{target.push(await readPhoto(file));added++}catch(err){errors.push(err.message)}}}
+  finally{importingPhotos=false;$('addPhotos').disabled=false;$('save').disabled=false;$('load').disabled=false;renderPhotos();$('photoStatus').textContent=added+' foto’s toegevoegd aan scène '+(targetScene+1)+'. Bewaar je project om ze te bewaren.';$('error').textContent=errors.join(' ')}
+};
+$('photosButton').onclick=()=>showPhoto(0);$('phoneButton').onclick=phone;
+
+if(new URLSearchParams(location.search).has('render'))document.body.classList.add('render');
+window.setConfig=c=>{config=normalizeConfig(c);scene=0;bind()};window.getConfig=()=>config;bind();
+</script></html>

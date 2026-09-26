@@ -1,0 +1,13 @@
+{
+  "name": "joel-bruiloftsfilm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bewerkbaar telefoonformat voor Joels bruiloftssketch",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "setup-browser": "playwright install chromium",
+    "check": "node scripts/export.cjs --check",
+    "export": "node scripts/export.cjs"
+  },
+  "dependencies": {"playwright": "1.62.1"}
+}
