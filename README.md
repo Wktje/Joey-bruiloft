@@ -69,7 +69,7 @@ De oorspronkelijke ZIP is weggelaten om dubbele pakketten te voorkomen. De besta
 
 ## Samenwerken via GitHub
 
-De privérepository staat op https://github.com/wjkrijgsman/joel-bruiloftsfilm. Download de code als ZIP of clone de repository om verder te werken. De eigenaar kan anderen toegang geven via Settings → Collaborators. Foto’s en videobestanden zijn inbegrepen.
+De privérepository staat op https://github.com/Wktje/Joey-bruiloft. Download de code als ZIP of clone de repository om verder te werken. De eigenaar kan anderen toegang geven via Settings → Collaborators. Foto’s en videobestanden zijn inbegrepen.
 
 Na het clonen kun je direct START.html openen. Voor nieuwe MP4-exports volg je de installatie hierboven.
 
