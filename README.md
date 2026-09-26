@@ -69,7 +69,11 @@ De oorspronkelijke ZIP is weggelaten om dubbele pakketten te voorkomen. De besta
 
 ## Samenwerken via GitHub
 
-De privérepository staat op https://github.com/Wktje/Joey-bruiloft. Download de code als ZIP of clone de repository om verder te werken. De eigenaar kan anderen toegang geven via Settings → Collaborators. Foto’s en videobestanden zijn inbegrepen.
+De openbare repository staat op https://github.com/Wktje/Joey-bruiloft. Iedereen kan de bestanden bekijken, downloaden en een eigen kopie aanpassen. Foto’s en videobestanden zijn inbegrepen.
+
+Openbaar betekent niet dat iedereen rechtstreeks naar deze repository kan pushen. De eigenaar kan mensen uitnodigen via **Settings → Collaborators → Add people**. Na het accepteren van de uitnodiging kunnen zij met schrijftoegang wijzigingen pushen. Anderen kunnen een fork maken en wijzigingen voorstellen via een pull request.
+
+De zichtbaarheid wordt ingesteld op GitHub; daarvoor is geen Git-commit of push nodig.
 
 Na het clonen kun je direct START.html openen. Voor nieuwe MP4-exports volg je de installatie hierboven.
 
